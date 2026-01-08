@@ -39,8 +39,7 @@ def main() -> None:
                 "bio": data.get("bio"),
                 "race": race,
                 "guild": guild_instance
-            }
-        )
+            })
 
 
 if __name__ == "__main__":
