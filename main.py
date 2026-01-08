@@ -11,7 +11,7 @@ def main() -> None:
     for player_name, data in user_data.items():
         race_data = data.get("race", {})
         race, _ = Race.objects.get_or_create(
-            name=race_data["name"],
+            name=race_data.get("name"),
             defaults={
                 "description": race_data.get("description", "")
             }
@@ -39,7 +39,8 @@ def main() -> None:
                 "bio": data.get("bio"),
                 "race": race,
                 "guild": guild_instance
-            })
+            }
+        )
 
 
 if __name__ == "__main__":
